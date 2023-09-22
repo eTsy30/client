@@ -1,0 +1,25 @@
+@import '../src/styles/variables.scss';
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #f1edb3;
+  background-color: #3b503d;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+a {
+  color: #f1edb3;
+  text-decoration: none;
+}

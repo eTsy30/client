@@ -1,0 +1,30 @@
+@import '../../styles/variables.scss';
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background-color: $blue;
+  height: 30px;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  nav {
+    margin-left: auto;
+
+    ul {
+      display: flex;
+      gap: 20px;
+      li {
+        list-style-type: none;
+      }
+      li > a {
+        color: $white;
+        text-decoration: none;
+      }
+      li a.active {
+        font-weight: 900;
+        color: $lightGreen;
+      }
+    }
+  }
+}
