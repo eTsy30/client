@@ -1,4 +1,4 @@
-import { instance } from './../../api/axios.api'
+import { instance } from '../api/axios.api'
 import { IResponseData, IUser, IuserData } from './../Types/types'
 export const Authservice = {
   async registration(userData: IuserData): Promise<IResponseData | undefined> {

@@ -3,9 +3,13 @@ import { Layout } from '../pages/Layout'
 import { ErrorPage } from '../pages/ErrorPage'
 import { Home } from '../pages/Home'
 import { TransActions } from '../pages/TransActions'
-import { Categories } from '../pages/Categories'
+import {
+  Categories,
+  categoriesAction,
+  categoriesLoader,
+} from '../pages/Categories/Categories'
 import { Auth } from '../pages/Auth'
-import { ProtectedRoute } from 'components/Header/ProtectedRoute'
+import { ProtectedRoute } from '../components/ProtectedRoute'
 
 export const router = createBrowserRouter([
   {
@@ -18,7 +22,7 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: 'transactions',
+        path: '/transactions',
         element: (
           <ProtectedRoute>
             <TransActions />
@@ -26,7 +30,9 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: 'categories',
+        path: '/categories',
+        action: categoriesAction,
+        loader: categoriesLoader,
         element: (
           <ProtectedRoute>
             <Categories />

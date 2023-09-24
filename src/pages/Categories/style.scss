@@ -1,0 +1,24 @@
+
+.categorie__selary {
+  position: relative; // Добавляем позицию, чтобы сделать позиционирование дочернего элемента относительно родителя
+
+  &:hover .categorie__selary__buttonGroup {
+    display: block; // При наведении на .categorie__selary показываем .categorie__selary__buttonGroup
+  }
+
+  &:hover {
+    .categorie__selary__buttonGroup {
+      display: block;
+    }
+  }
+
+  .categorie__selary__buttonGroup {
+    display: none; // Сначала скрываем .categorie__selary__buttonGroup
+    position: absolute; // Позиционируем абсолютно, чтобы он не влиял на остальной контент
+    top: 100%; // Размещаем его под .categorie__selary
+    left: 0;
+    background-color: #fff; // Просто для примера, вы можете настроить цвет по вашему усмотрению
+    border: 1px solid #ccc; // Просто для примера
+    padding: 10px; // Просто для примера
+  }
+}

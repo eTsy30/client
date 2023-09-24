@@ -2,19 +2,23 @@ import { RouterProvider } from 'react-router-dom'
 import './App.css'
 import { router } from './router/router'
 
-import { getTokenTolocalStorage } from '../helpers/localstorage.helper'
-import { Authservice } from 'services/auth.service'
-import { logOutReduser, loginReduser } from 'store/user/userSlice'
+import { logOutReduser, loginReduser } from '../src/store/user/userSlice'
 import { useEffect } from 'react'
 import { useAppDispatch } from '../src/store/hook/hooks'
+import { getTokenTolocalStorage } from '../src/helpers/localstorage.helper'
+import { Authservice } from '../src/services/auth.service'
 
 function App() {
   const dispatch = useAppDispatch()
   const checkAuth = async () => {
     const token = getTokenTolocalStorage()
+    console.log(token, 'dfdfdfdf')
+
     try {
       if (token) {
         const data = await Authservice.getMe()
+        console.log(data, 'ffdfff')
+
         if (data) {
           dispatch(loginReduser(data))
         } else {
@@ -27,10 +31,10 @@ function App() {
   }
 
   useEffect(() => {
-    checkAuth
+    checkAuth()
   }, [])
 
-  return <RouterProvider router={router}></RouterProvider>
+  return <RouterProvider router={router} />
 }
 
 export default App

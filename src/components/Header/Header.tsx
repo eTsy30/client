@@ -1,11 +1,12 @@
 import { FC } from 'react'
 import './style.scss'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
-import { useAuth } from '../../hooks/useAuth'
+
 import { useAppDispatch } from '../../store/hook/hooks'
-import { logOutReduser } from 'store/user/userSlice'
-import { removeTokenTolocalStorage } from '../../../helpers/localstorage.helper'
+import { logOutReduser } from '../../store/user/userSlice'
 import { toast } from 'react-toastify'
+import { removeTokenTolocalStorage } from '../../helpers/localstorage.helper'
+import { useAuth } from '../../hooks/useAuth'
 export const Header: FC = () => {
   const isAuth = useAuth()
   const navigate = useNavigate()

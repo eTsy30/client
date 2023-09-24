@@ -1,10 +1,10 @@
 import React, { FC, useState } from 'react'
 import { toast } from 'react-toastify'
 import { Authservice } from '../services/auth.service'
-import { setTokenTolocalStorage } from '../../helpers/localstorage.helper'
 import { useAppDispatch } from '../store/hook/hooks'
 import { loginReduser } from '../store/user/userSlice'
 import { useNavigate } from 'react-router-dom'
+import { setTokenTolocalStorage } from '../helpers/localstorage.helper'
 export const Auth: FC = () => {
   const [email, setemail] = useState<string>()
   const [password, setpassword] = useState<string>()
