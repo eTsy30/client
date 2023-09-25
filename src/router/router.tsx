@@ -10,6 +10,7 @@ import {
 } from '../pages/Categories/Categories'
 import { Auth } from '../pages/Auth'
 import { ProtectedRoute } from '../components/ProtectedRoute'
+import { transactionAction, transactionLoader } from '../pages/TransActions'
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +24,8 @@ export const router = createBrowserRouter([
       },
       {
         path: '/transactions',
+        loader: transactionLoader,
+        action: transactionAction,
         element: (
           <ProtectedRoute>
             <TransActions />

@@ -26,5 +26,20 @@ export interface ICategory {
   id: number
   createdAt: string
   updatedAt: string
-  transactions: []
+  transactions?: []
+}
+export interface IRespontTratsactionsLoader {
+  categories: ICategory[]
+  transactions: ITransactions[]
+  totalIncome: number
+  totalExpense: number
+}
+export interface ITransactions {
+  amount: number
+  createAt: string
+  updateAt: string
+  title: string
+  type: string
+  id: number
+  category: ICategory
 }
