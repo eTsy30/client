@@ -12,12 +12,10 @@ function App() {
   const dispatch = useAppDispatch()
   const checkAuth = async () => {
     const token = getTokenTolocalStorage()
-    console.log(token, 'dfdfdfdf')
 
     try {
       if (token) {
         const data = await Authservice.getMe()
-        console.log(data, 'ffdfff')
 
         if (data) {
           dispatch(loginReduser(data))

@@ -1,3 +1,4 @@
+@import '../../styles/variables.scss';
 .categoryModal {
   position: fixed;
   top: 0;
@@ -8,10 +9,28 @@
   height: 100%;
   background: rgba($color: #000000, $alpha: 0.5);
   display: flex;
-  justify-self: center;
+  justify-content: center;
   align-items: center;
 }
 .categoryModal_form {
+  background-color: $green;
   position: relative;
-  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 30px;
+  border: 2px solid $white;
+  .label {
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin: 5px;
+    font-size: 1rem;
+  }
+  .button-group > * {
+    margin: 0 10px;
+  }
 }

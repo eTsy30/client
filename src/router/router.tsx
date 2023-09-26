@@ -8,7 +8,7 @@ import {
   categoriesAction,
   categoriesLoader,
 } from '../pages/Categories/Categories'
-import { Auth } from '../pages/Auth'
+import { Auth } from '../pages/Auth/Auth'
 import { ProtectedRoute } from '../components/ProtectedRoute'
 import { transactionAction, transactionLoader } from '../pages/TransActions'
 

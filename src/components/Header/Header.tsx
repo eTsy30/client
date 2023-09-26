@@ -7,6 +7,8 @@ import { logOutReduser } from '../../store/user/userSlice'
 import { toast } from 'react-toastify'
 import { removeTokenTolocalStorage } from '../../helpers/localstorage.helper'
 import { useAuth } from '../../hooks/useAuth'
+import logo from '../../assets/bank.png'
+import { Button } from '../Button/Button'
 export const Header: FC = () => {
   const isAuth = useAuth()
   const navigate = useNavigate()
@@ -19,7 +21,10 @@ export const Header: FC = () => {
   }
   return (
     <header className="header">
-      <Link to="/">LOGO </Link>
+      <Link to="/">
+        <img className="logo-img" src={logo} alt="Logo" />
+        <p className="logo-title">Budget</p>
+      </Link>
       {isAuth && (
         <nav>
           <ul>
@@ -36,7 +41,7 @@ export const Header: FC = () => {
         </nav>
       )}
       {isAuth ? (
-        <button onClick={logOut}>exit</button>
+        <Button click={logOut} text="exit" />
       ) : (
         <Link to={'auth'}>Log in /Sing in</Link>
       )}

@@ -1,6 +1,27 @@
-
+@import '../../styles/variables.scss';
+.categories {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #c8cf94;
+  padding: 30px;
+  align-items: center;
+  margin-top: 30px;
+  border-radius: 10px;
+  h1 {
+    color: $green;
+  }
+}
 .categorie__selary {
-  position: relative; // Добавляем позицию, чтобы сделать позиционирование дочернего элемента относительно родителя
+  position: relative;
+  background-color: $blue;
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // Добавляем позицию, чтобы сделать позиционирование дочернего элемента относительно родителя
 
   &:hover .categorie__selary__buttonGroup {
     display: block; // При наведении на .categorie__selary показываем .categorie__selary__buttonGroup
@@ -8,17 +29,32 @@
 
   &:hover {
     .categorie__selary__buttonGroup {
-      display: block;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
     }
   }
 
   .categorie__selary__buttonGroup {
     display: none; // Сначала скрываем .categorie__selary__buttonGroup
     position: absolute; // Позиционируем абсолютно, чтобы он не влиял на остальной контент
-    top: 100%; // Размещаем его под .categorie__selary
+    top: 0%; // Размещаем его под .categorie__selary
     left: 0;
-    background-color: #fff; // Просто для примера, вы можете настроить цвет по вашему усмотрению
-    border: 1px solid #ccc; // Просто для примера
-    padding: 10px; // Просто для примера
+    border-radius: 10px;
+    min-width: 100%;
+    background-color: rgb(
+      206,
+      204,
+      204
+    ); // Просто для примера, вы можете настроить цвет по вашему усмотрению
+
+    padding: 6px 0; // Просто для примера
+    z-index: 2;
   }
+}
+.category {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
 }

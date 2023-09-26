@@ -1,10 +1,12 @@
 import React, { FC, useState } from 'react'
+import './style.scss'
 import { toast } from 'react-toastify'
-import { Authservice } from '../services/auth.service'
-import { useAppDispatch } from '../store/hook/hooks'
-import { loginReduser } from '../store/user/userSlice'
+import { Authservice } from '../../services/auth.service'
+import { useAppDispatch } from '../../store/hook/hooks'
+import { loginReduser } from '../../store/user/userSlice'
 import { useNavigate } from 'react-router-dom'
-import { setTokenTolocalStorage } from '../helpers/localstorage.helper'
+import { setTokenTolocalStorage } from '../../helpers/localstorage.helper'
+import { Input } from '../../components/Input/Input'
 export const Auth: FC = () => {
   const [email, setemail] = useState<string>()
   const [password, setpassword] = useState<string>()
@@ -43,16 +45,16 @@ export const Auth: FC = () => {
     }
   }
   return (
-    <div>
+    <div className="auth">
       <h1>{isLogin ? 'Login' : 'Registration'}</h1>
-      <form onSubmit={isLogin ? login : registration}>
-        <input
+      <form className="auth__form" onSubmit={isLogin ? login : registration}>
+        <Input
           type="email"
           onChange={(e) => setemail(e.target.value)}
           value={email}
           placeholder="Email"
         />
-        <input
+        <Input
           type="password"
           onChange={(e) => setpassword(e.target.value)}
           value={password}
