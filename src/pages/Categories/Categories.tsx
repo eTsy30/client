@@ -5,7 +5,6 @@ import './style.scss'
 import { CategoryModal } from '../../components/CategoryModal/CategoryModal'
 import { instance } from '../../api/axios.api'
 import { ICategory } from '@/Types/types'
-import { BsFillBrushFill, BsFillBucketFill } from 'react-icons/bs'
 
 export const categoriesAction = async ({ request }: any) => {
   switch (request.method) {
@@ -64,13 +63,11 @@ export const Categories: FC = () => {
                     }}
                   >
                     {' '}
-                    <BsFillBrushFill />
+                    edit
                   </button>
                   <Form method="DELETE" action="/categories">
                     <input type="hidden" name="id" value={category.id} />
-                    <button>
-                      <BsFillBucketFill />
-                    </button>
+                    <button>dell</button>
                   </Form>
                 </div>
               </div>
