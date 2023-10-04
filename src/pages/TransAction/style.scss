@@ -1,0 +1,45 @@
+@import '../../styles/variables.scss';
+.transActions-grid {
+  width: 100%;
+}
+.transActions {
+  border: 2px solid #c8cf94;
+  padding: 20px 5px;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-around;
+}
+.grid {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  .grid__container {
+    background-color: #91908d;
+    padding: 10px 15px;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  p {
+    margin: 0;
+  }
+  .title {
+    font-weight: 100;
+  }
+  .expense {
+    font-weight: 600;
+  }
+  .income {
+    font-weight: 600;
+  }
+  i {
+    font-size: 24px;
+  }
+}
+.grid__wrapper {
+  display: flex;
+  gap: 10px;
+}

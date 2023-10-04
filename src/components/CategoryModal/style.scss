@@ -13,7 +13,7 @@
   align-items: center;
 }
 .categoryModal_form {
-  background-color: $green;
+  background-color: $white;
   position: relative;
   display: flex;
   align-items: center;
@@ -22,15 +22,18 @@
   flex-direction: column;
   border-radius: 10px;
   padding: 30px;
-  border: 2px solid $white;
-  .label {
+  width: min(95%, 356px);
+
+  label {
     text-align: center;
     width: 100%;
     display: block;
     margin: 5px;
-    font-size: 1rem;
+    font-size: 2rem;
   }
-  .button-group > * {
-    margin: 0 10px;
+  .button-group {
+    display: flex;
+    width: 100%;
+    gap: 10px;
   }
 }

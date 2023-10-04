@@ -1,4 +1,9 @@
 #root {
-  margin: auto;
-  max-width: 1280px;
+  max-width: 375px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  min-height: 90vh;
+  overflow: hidden;
+  border: 1px solid #000;
 }

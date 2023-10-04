@@ -3,24 +3,22 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #c8cf94;
-  padding: 30px;
+  padding: 15px;
   align-items: center;
-  margin-top: 30px;
+
   border-radius: 10px;
   h1 {
-    color: $green;
+    font-size: 34px;
+    color: $black;
   }
 }
 .categorie__selary {
   position: relative;
-  background-color: $blue;
-  padding: 10px;
   border-radius: 10px;
-  min-width: 90px;
+  width: 100px;
   display: flex;
+  flex-direction: column-reverse;
   align-items: center;
-  justify-content: center;
   // Добавляем позицию, чтобы сделать позиционирование дочернего элемента относительно родителя
 
   &:hover .categorie__selary__buttonGroup {
@@ -30,8 +28,11 @@
   &:hover {
     .categorie__selary__buttonGroup {
       display: flex;
-      gap: 10px;
+      gap: 5px;
+      width: 100%;
+      height: 100%;
       justify-content: center;
+      align-items: center;
     }
   }
   //
@@ -48,7 +49,7 @@
       204
     ); // Просто для примера, вы можете настроить цвет по вашему усмотрению
 
-    padding: 6px 0; // Просто для примера
+    padding: 7px 0; // Просто для примера
     z-index: 2;
   }
 }
@@ -56,5 +57,32 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+  align-items: center;
+  justify-content: center;
+}
+.conteiner-for-icon {
+  background-color: black;
+  width: 65px;
+  height: 65px;
+  padding: 5px;
+  border-radius: 10px;
+  img {
+    width: 50px;
+    height: 50px;
+  }
+}
+.title-category {
+  line-height: 1.5em;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+.categorie__selary__icon {
+  padding: 10px;
+  background-color: $grey;
+  border-radius: 10px;
+  border: none;
 }

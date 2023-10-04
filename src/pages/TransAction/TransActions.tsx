@@ -1,16 +1,16 @@
-import { instance } from '../api/axios.api'
-import { TransActionsForm } from '../components/TransActionsForm/TransActionsForm'
-import { FC } from 'react'
+import { instance } from '../../api/axios.api'
+import { TransActionsForm } from '../../components/TransActionsForm/TransActionsForm'
+import { FC, useEffect } from 'react'
+import './style.scss'
 import {
   ICategory,
   IRespontTratsactionsLoader,
   ITransactions,
-} from '../Types/types'
+} from '../../Types/types'
 import { toast } from 'react-toastify'
-import { TransActionTable } from '../components/TransActionTable/TransActionTable'
+import { TransActionTable } from '../../components/TransActionTable/TransActionTable'
 import { useLoaderData } from 'react-router-dom'
-import { formatToUSD } from '../helpers/curentcyHelper'
-import { Chart } from '../components/Chart/Chart'
+import { formatToUSD } from '../../helpers/curentcyHelper'
 
 export const transactionLoader = async () => {
   const categories = await instance.get<ICategory>('/categories')
@@ -61,32 +61,40 @@ export const transactionAction = async ({ request }: any) => {
 export const TransActions: FC = () => {
   const { totalIncome, totalExpense } =
     useLoaderData() as IRespontTratsactionsLoader
+  useEffect(() => {}, [totalIncome, totalExpense])
+
   return (
     <>
-      <div>
+      <div className="transActions">
         {/* add tratsaction form */}
-        <div>
-          <TransActionsForm />
-        </div>
+
+        <TransActionsForm />
+
         {/* statistiks blok */}
-        <div>
+        <div className="transActions-grid">
           <div className="grid">
-            <div>
-              <p>Total income</p>
-              <p>{formatToUSD.format(totalIncome)}</p>
+            <div className="grid__container">
+              <p className="title">Total income</p>
+              <div className="grid__wrapper">
+                <p className="income">{formatToUSD.format(totalIncome)}</p>
+                <i
+                  className="fa-solid fa-arrow-trend-up"
+                  style={{ color: '#349002' }}
+                ></i>
+              </div>
             </div>
-            <div>
-              <p>Total expense</p>
-              <p>{formatToUSD.format(totalExpense)}</p>
+            <div className="grid__container">
+              <p className="title">Total expense</p>
+              <div className="grid__wrapper">
+                <p className="expense">{formatToUSD.format(totalExpense)}</p>
+                <i
+                  className="fa-solid fa-arrow-trend-down"
+                  style={{ color: '#ff0000' }}
+                ></i>
+              </div>
             </div>
           </div>
-          <>
-            {' '}
-            <Chart
-              totalExpense={totalExpense}
-              totalIncome={totalIncome}
-            ></Chart>
-          </>
+          <> </>
         </div>
       </div>
       {/* Transactions table */}

@@ -1,0 +1,12 @@
+.news {
+  width: 105px;
+  height: 90px;
+  border: 1px solid #000;
+}
+.home-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}

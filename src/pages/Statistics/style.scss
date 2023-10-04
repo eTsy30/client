@@ -1,0 +1,46 @@
+@import '../../styles/variables.scss';
+.statistics_container {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.totalIncome_container {
+  background-color: green;
+  color: white;
+  border-radius: 10px;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.totalExpense_container {
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.total_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.total_container p {
+  font-size: 30px;
+}
+.balance__container {
+  color: white;
+  background-color: $grey;
+  font-size: 28px;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  font-weight: 500;
+  margin: 0 10px;
+}

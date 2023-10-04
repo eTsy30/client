@@ -5,7 +5,9 @@ import './style.scss'
 import { CategoryModal } from '../../components/CategoryModal/CategoryModal'
 import { instance } from '../../api/axios.api'
 import { ICategory } from '@/Types/types'
-
+import { ButtonRed } from '../../components/Button/ButtonRed'
+import Girafe from '../../assets/icon/giraffe.png'
+import { toast } from 'react-toastify'
 export const categoriesAction = async ({ request }: any) => {
   switch (request.method) {
     case 'POST': {
@@ -15,6 +17,7 @@ export const categoriesAction = async ({ request }: any) => {
       }
 
       await instance.post('/categories', title)
+      toast.success('You create new category')
       return null
     }
     case 'PATCH': {
@@ -30,6 +33,7 @@ export const categoriesAction = async ({ request }: any) => {
       const formdata = await request.formData()
       const categoryId = formdata.get('id')
       await instance.delete(`/categories/category/${categoryId}`)
+      toast.success('You delete category')
       return null
     }
   }
@@ -54,20 +58,27 @@ export const Categories: FC = () => {
           {categories.map((category, index) => {
             return (
               <div key={index} className="categorie__selary">
-                {category.title}
+                <span className="title-category">{category.title}</span>
+                <div className="conteiner-for-icon">
+                  <img src={Girafe} alt="" />
+                </div>
+
                 <div className="categorie__selary__buttonGroup">
                   <button
+                    className="categorie__selary__icon"
                     onClick={() => {
                       setIsEdit(true)
                       setCategoryId(category.id)
                     }}
                   >
-                    {' '}
-                    edit
+                    <i className="fa-solid fa-pen"></i>
                   </button>
+
                   <Form method="DELETE" action="/categories">
                     <input type="hidden" name="id" value={category.id} />
-                    <button>dell</button>
+                    <button className="categorie__selary__icon">
+                      <i className="fa-solid fa-trash"></i>
+                    </button>
                   </Form>
                 </div>
               </div>
@@ -75,10 +86,10 @@ export const Categories: FC = () => {
           })}
         </div>
         {/* add category */}
-        <button onClick={() => setVisibleModal(true)}>
-          <span>Create new category</span>
-          Icon
-        </button>
+        <ButtonRed
+          click={() => setVisibleModal(true)}
+          text="Create new category"
+        />
       </div>
       {/* add category  modal */}
       {visibleModal && (

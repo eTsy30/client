@@ -26,7 +26,7 @@ export interface ICategory {
   id: number
   createdAt: string
   updatedAt: string
-  transactions?: []
+  transaction?: []
 }
 export interface IRespontTratsactionsLoader {
   categories: ICategory[]

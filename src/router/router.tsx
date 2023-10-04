@@ -1,8 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom'
 import { Layout } from '../pages/Layout'
 import { ErrorPage } from '../pages/ErrorPage'
-import { Home } from '../pages/Home'
-import { TransActions } from '../pages/TransActions'
+import { Home } from '../pages/Home/Home'
+import { TransActions } from '../pages/TransAction/TransActions'
 import {
   Categories,
   categoriesAction,
@@ -10,7 +10,11 @@ import {
 } from '../pages/Categories/Categories'
 import { Auth } from '../pages/Auth/Auth'
 import { ProtectedRoute } from '../components/ProtectedRoute'
-import { transactionAction, transactionLoader } from '../pages/TransActions'
+import {
+  transactionAction,
+  transactionLoader,
+} from '../pages/TransAction/TransActions'
+import { Statistics } from '../pages/Statistics/Statistics'
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +49,15 @@ export const router = createBrowserRouter([
       {
         path: 'auth',
         element: <Auth />,
+      },
+      {
+        path: '/statistics',
+        loader: transactionLoader,
+        element: (
+          <ProtectedRoute>
+            <Statistics />
+          </ProtectedRoute>
+        ),
       },
     ],
   },

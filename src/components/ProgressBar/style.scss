@@ -1,0 +1,36 @@
+@import '../../styles/variables.scss';
+.progress-bar {
+  width: 100%;
+  background-color: $grey;
+  height: 30px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-fill {
+  display: flex;
+  color: white;
+  height: 100%;
+  width: 0;
+  padding-left: 5px;
+  animation: fillAnimation 5s ease forwards;
+  align-items: center;
+}
+
+@keyframes fillAnimation {
+  0% {
+    width: 0; // Начинаем с нулевой ширины
+  }
+  100% {
+  }
+}
+.progress-bar__container {
+  // outline: auto;
+  margin: 10px;
+  h6 {
+    padding-left: 5px;
+    text-transform: capitalize;
+    margin: 0px;
+  }
+}

@@ -7,6 +7,7 @@ interface Iinput {
   value?: any
   placeholder?: string
   name?: string
+  required?: boolean
 }
 export const Input: FC<Iinput> = ({
   type,

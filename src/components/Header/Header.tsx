@@ -8,7 +8,7 @@ import { toast } from 'react-toastify'
 import { removeTokenTolocalStorage } from '../../helpers/localstorage.helper'
 import { useAuth } from '../../hooks/useAuth'
 import logo from '../../assets/bank.png'
-import { Button } from '../Button/Button'
+import Bee from '../../assets/icon/bee.svg'
 export const Header: FC = () => {
   const isAuth = useAuth()
   const navigate = useNavigate()
@@ -23,25 +23,43 @@ export const Header: FC = () => {
     <header className="header">
       <Link to="/">
         <img className="logo-img" src={logo} alt="Logo" />
-        <p className="logo-title">Budget</p>
+        {/* <p className="logo-title">Budget</p> */}
       </Link>
       {isAuth && (
         <nav>
           <ul>
             <li>
-              <NavLink to={'/'}>Home</NavLink>
+              <NavLink className="header__link" to={'/'}>
+                <i className="fa-solid fa-house"></i>
+              </NavLink>
             </li>
             <li>
-              <NavLink to={'categories'}>Categories</NavLink>
+              <NavLink className="header__link" to={'categories'}>
+                <i className="fa-solid fa-clipboard"></i>
+              </NavLink>
             </li>
             <li>
-              <NavLink to={'transactions'}>Transaction</NavLink>
+              <NavLink className="header__link" to={'transactions'}>
+                <i className="fa-solid fa-square-plus"></i>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="header__link" to={'statistics'}>
+                <i className="fa-solid fa-chart-pie"></i>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="header__link" to={'statistics'}>
+                <img className="icon_link" src={Bee} alt="" />
+              </NavLink>
             </li>
           </ul>
         </nav>
       )}
       {isAuth ? (
-        <Button click={logOut} text="exit" />
+        <button className="button__exit" onClick={logOut}>
+          <i className="fa-solid fa-right-from-bracket"></i>
+        </button>
       ) : (
         <Link to={'auth'}>Log in /Sing in</Link>
       )}

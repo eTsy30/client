@@ -7,6 +7,8 @@ interface Props {
 import './style.scss'
 import { Form } from 'react-router-dom'
 import { Input } from '../Input/Input'
+import { ButtonRed } from '../Button/ButtonRed'
+import { ButtonGreen } from '../Button/ButtonGreen'
 export const CategoryModal: FC<Props> = ({ type, id, setVisibleModal }) => {
   return (
     <div className="categoryModal">
@@ -22,8 +24,11 @@ export const CategoryModal: FC<Props> = ({ type, id, setVisibleModal }) => {
           <Input type="hidden" name="id" value={id} />
         </label>
         <div className="button-group">
-          <button type="submit">{type === 'PATCH' ? 'Save' : 'Create'}</button>
-          <button onClick={() => setVisibleModal(false)}>Close</button>
+          <ButtonGreen
+            type="submit"
+            text={type === 'PATCH' ? 'Save' : 'Create'}
+          />
+          <ButtonRed click={() => setVisibleModal(false)} text="Close" />
         </div>
       </Form>
     </div>

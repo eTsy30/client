@@ -7,6 +7,7 @@ import { loginReduser } from '../../store/user/userSlice'
 import { useNavigate } from 'react-router-dom'
 import { setTokenTolocalStorage } from '../../helpers/localstorage.helper'
 import { Input } from '../../components/Input/Input'
+import { ButtonRed } from '../../components/Button/ButtonRed'
 export const Auth: FC = () => {
   const [email, setemail] = useState<string>()
   const [password, setpassword] = useState<string>()
@@ -60,15 +61,15 @@ export const Auth: FC = () => {
           value={password}
           placeholder="Password"
         />
-        <button>Submit</button>
+        {isLogin ? <ButtonRed text="Login" /> : <ButtonRed text="Register" />}
       </form>
       <div>
         {isLogin ? (
-          <button onClick={() => setIsLogin(!isLogin)}>
+          <button className="button-link" onClick={() => setIsLogin(!isLogin)}>
             You don´t have account
           </button>
         ) : (
-          <button onClick={() => setIsLogin(!isLogin)}>
+          <button className="button-link" onClick={() => setIsLogin(!isLogin)}>
             Already have an account?
           </button>
         )}

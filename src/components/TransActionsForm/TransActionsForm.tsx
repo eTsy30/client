@@ -1,25 +1,26 @@
 import { ICategory, IRespontTratsactionsLoader } from '../../Types/types'
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import { Form, useLoaderData } from 'react-router-dom'
-import { CategoryModal } from '../CategoryModal/CategoryModal'
-
+import { Input } from '../Input/Input'
+import './style.scss'
+import { ButtonRed } from '../Button/ButtonRed'
 export const TransActionsForm: FC = () => {
   const { categories } = useLoaderData() as IRespontTratsactionsLoader
-  const [visibleModal, setvisibleModal] = useState<boolean>(false)
+
   return (
-    <div>
-      <Form method="POST" action="/transactions">
+    <div className="transactions_container">
+      <Form method="POST" className="transactions--form" action="/transactions">
         <label htmlFor="title">
           <span>Title</span>
-          <input type="text" name="title" placeholder="Title" required />
+          <Input type="text" name="title" placeholder="Title" required />
         </label>
         <label htmlFor="Amount">
           <span>Amount</span>
-          <input type="number" name="Amount" placeholder="Amount" required />
+          <Input type="number" name="Amount" placeholder="Amount" required />
         </label>
         {/* select */}
         {categories.length ? (
-          <label htmlFor="Category">
+          <label htmlFor="Category" className="categoty_container">
             <span>Category</span>
             <select name="Category" required>
               {categories.map((category: ICategory) => (
@@ -32,27 +33,32 @@ export const TransActionsForm: FC = () => {
         ) : (
           <h1>To continue create a category first</h1>
         )}
-        <button onClick={() => setvisibleModal(true)}>
-          {' '}
-          <span>Manage categories</span>
-        </button>
-        {/* radio button  */}
-        <div>
-          <label>
-            <input type="radio" name="type" value={'income'} />
+        <div className="transactiom--radioButton">
+          <input
+            className="input_income radioButton_input"
+            type="radio"
+            name="type"
+            value={'income'}
+            checked
+            id="option-1"
+          />
+          <input
+            className="input_expense radioButton_input"
+            type="radio"
+            name="type"
+            value={'expense'}
+            id="option-2"
+          />
+          <label htmlFor="option-1" className="option option-1">
             <span>Income</span>
           </label>
-          <label>
-            <input type="radio" name="type" value={'expense'} />
+          <label htmlFor="option-2" className="option option-2">
             <span>Expense</span>
           </label>
         </div>
         {/* submit button    */}
-        <button> Submit</button>
+        <ButtonRed text="Submit" />
       </Form>
-      {visibleModal && (
-        <CategoryModal type="POST" setVisibleModal={setvisibleModal} />
-      )}
     </div>
   )
 }
