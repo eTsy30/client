@@ -49,7 +49,7 @@ export const Header: FC = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink className="header__link" to={'statistics'}>
+              <NavLink className="header__link" to={'bank'}>
                 <img className="icon_link" src={Bee} alt="" />
               </NavLink>
             </li>

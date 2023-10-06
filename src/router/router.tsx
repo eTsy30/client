@@ -15,7 +15,7 @@ import {
   transactionLoader,
 } from '../pages/TransAction/TransActions'
 import { Statistics } from '../pages/Statistics/Statistics'
-
+import { Bank, bankAction, bankLoader } from '../pages/Bank/Bank'
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -49,6 +49,12 @@ export const router = createBrowserRouter([
       {
         path: 'auth',
         element: <Auth />,
+      },
+      {
+        path: '/bank',
+        loader: bankLoader,
+        action: bankAction,
+        element: <Bank />,
       },
       {
         path: '/statistics',

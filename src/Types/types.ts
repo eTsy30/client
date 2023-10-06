@@ -43,3 +43,13 @@ export interface ITransactions {
   id: number
   category: ICategory
 }
+export interface IBank {
+  id: number
+  title: string
+  bankItems: IBankItems[]
+}
+export interface IBankItems {
+  count: number
+  id: number
+  status: boolean
+}
