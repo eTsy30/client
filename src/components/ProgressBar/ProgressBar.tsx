@@ -7,7 +7,6 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
   percent = 0,
   title,
 }) => {
-  // Вычисление цвета на основе процента
   const getColor = (percent: number) => {
     const red = Math.min(250, Math.floor(percent * 2.55))
     const green = Math.min(255, Math.floor((100 - percent) * 2.55))
@@ -18,14 +17,13 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
     width: `${percent}%`,
     backgroundColor: getColor(percent),
   }
-  console.log(percent, title, 'rrrrr')
 
   return (
     <div className="progress-bar__container">
       <h6>{title}</h6>
       <div className="progress-bar">
         <div className="progress-fill" style={fillStyle}>
-          {percent}
+          {percent}%
         </div>
       </div>
     </div>

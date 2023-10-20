@@ -53,3 +53,7 @@ export interface IBankItems {
   id: number
   status: boolean
 }
+export interface IBothBank {
+  categories: ICategory[]
+  bank: IBank[]
+}

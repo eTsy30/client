@@ -7,10 +7,7 @@ interface Idata {
 export const useCategoryCount = (data: ICategory[]) => {
   const [result, setResult] = useState<Idata[]>([])
   useEffect(() => {
-    const result = data.filter(
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (item: any) => item.transaction?.length
-    )
+    const result = data.filter((item: ICategory) => item.transaction?.length)
     const transformedData = result.map((item) => ({
       name: item.title,
       count: item.transaction?.reduce(

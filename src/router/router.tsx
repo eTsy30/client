@@ -9,7 +9,7 @@ import {
   categoriesLoader,
 } from '../pages/Categories/Categories'
 import { Auth } from '../pages/Auth/Auth'
-// import { ProtectedRoute } from '../components/ProtectedRoute'
+import { ProtectedRoute } from '../components/ProtectedRoute'
 import {
   transactionAction,
   transactionLoader,
@@ -31,9 +31,9 @@ export const router = createBrowserRouter([
         loader: transactionLoader,
         action: transactionAction,
         element: (
-          // <ProtectedRoute>
-          <TransActions />
-          // </ProtectedRoute>
+          <ProtectedRoute>
+            <TransActions />
+          </ProtectedRoute>
         ),
       },
       {
@@ -41,9 +41,9 @@ export const router = createBrowserRouter([
         action: categoriesAction,
         loader: categoriesLoader,
         element: (
-          // <ProtectedRoute>
-          <Categories />
-          // </ProtectedRoute>
+          <ProtectedRoute>
+            <Categories />
+          </ProtectedRoute>
         ),
       },
       {
@@ -60,9 +60,9 @@ export const router = createBrowserRouter([
         path: '/statistics',
         loader: transactionLoader,
         element: (
-          // <ProtectedRoute>
-          <Statistics />
-          // </ProtectedRoute>
+          <ProtectedRoute>
+            <Statistics />
+          </ProtectedRoute>
         ),
       },
     ],

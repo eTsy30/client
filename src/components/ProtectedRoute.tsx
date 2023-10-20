@@ -1,5 +1,5 @@
 import { useAuth } from '../hooks/useAuth'
-import { FC } from 'react' // защита роутеринга
+import { FC } from 'react'
 interface Props {
   children: JSX.Element
 }

@@ -1,5 +1,4 @@
 import { IRespontTratsactionsLoader, ITransactions } from '@/Types/types'
-// import { formatDate } from '../../helpers/dateHelper'
 import { FC, useEffect, useState } from 'react'
 import { Form, useLoaderData } from 'react-router-dom'
 import { formatToUSD } from '../../helpers/curentcyHelper'
@@ -37,7 +36,6 @@ export const TransActionTable: FC<ITransactionTable> = ({ limit = 3 }) => {
           pageRangeDisplayed={1}
           marginPagesDisplayed={2}
           onPageChange={handlePageChange}
-          /////
           activeClassName={'item active '}
           breakClassName={'item break-me '}
           breakLabel={'...'}

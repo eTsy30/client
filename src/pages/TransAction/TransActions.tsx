@@ -23,7 +23,6 @@ export const transactionLoader = async () => {
     totalIncome: totalIncome.data,
     totalExpense: totalExpense.data,
   }
-  console.log(data)
 
   return data
 }

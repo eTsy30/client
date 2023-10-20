@@ -19,10 +19,9 @@
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  // Добавляем позицию, чтобы сделать позиционирование дочернего элемента относительно родителя
 
   &:hover .categorie__selary__buttonGroup {
-    display: block; // При наведении на .categorie__selary показываем .categorie__selary__buttonGroup
+    display: block;
   }
 
   &:hover {
@@ -35,21 +34,17 @@
       align-items: center;
     }
   }
-  //
+
   .categorie__selary__buttonGroup {
-    display: none; // Сначала скрываем .categorie__selary__buttonGroup
-    position: absolute; // Позиционируем абсолютно, чтобы он не влиял на остальной контент
-    top: 0%; // Размещаем его под .categorie__selary
+    display: none;
+    position: absolute;
+    top: 0%;
     left: 0;
     border-radius: 10px;
     min-width: 100%;
-    background-color: rgb(
-      206,
-      204,
-      204
-    ); // Просто для примера, вы можете настроить цвет по вашему усмотрению
+    background-color: rgb(206, 204, 204);
 
-    padding: 7px 0; // Просто для примера
+    padding: 7px 0;
     z-index: 2;
   }
 }

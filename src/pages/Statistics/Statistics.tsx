@@ -20,7 +20,6 @@ export const Statistics = () => {
   }, [])
 
   const result = useCategoryCount(data)
-  console.log(result, 'result')
 
   return (
     <>
@@ -40,8 +39,8 @@ export const Statistics = () => {
       </div>
       {result.map((item) => (
         <ProgressBar
-          percent={Math.round(
-            item.count ? (item.count * 100) / totalIncome : 0
+          percent={Number(
+            (item.count ? (item.count * 100) / totalIncome : 0).toFixed(1)
           )}
           title={item.name}
         />
