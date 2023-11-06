@@ -25,8 +25,8 @@ export const Auth: FC = () => {
       }
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
-      const error = err.response?.data.message
-      toast.error(error.toString())
+      // const error = err.response?.data.message
+      toast.error('error.toString()')
     }
   }
   const login = async (e: React.FormEvent<HTMLFormElement>) => {
